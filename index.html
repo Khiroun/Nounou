@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nouna Hannouna — Athens-based editorial model and creative personality." />
+  <title>NOUNA HANNOUNA — Athens</title>
+
+  <!-- CDN assets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --ink: #111018;
+      --paper: #f4f1f8;
+      --purple: #6d35d8;
+      --blue: #4159ff;
+      --lavender: #d8ccff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Space Grotesk", sans-serif;
+      overflow-x: hidden;
+    }
+    .display { font-family: "Playfair Display", serif; }
+    .mono { font-family: "DM Mono", monospace; }
+    .grain::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+      z-index: 50;
+    }
+    .hero-title {
+      font-size: clamp(4.5rem, 15vw, 13rem);
+      line-height: .78;
+      letter-spacing: -.075em;
+    }
+    .outline {
+      color: transparent;
+      -webkit-text-stroke: 1px var(--ink);
+    }
+    .editorial-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.8) contrast(1.03);
+      transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .4s ease;
+    }
+    .image-card:hover .editorial-img {
+      transform: scale(1.045);
+      filter: saturate(1) contrast(1.05);
+    }
+    .marquee {
+      animation: marquee 24s linear infinite;
+      white-space: nowrap;
+    }
+    @keyframes marquee {
+      to { transform: translateX(-50%); }
+    }
+    .fade-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 100%;
+      height: 1px;
+      background: currentColor;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform .3s ease;
+    }
+    .nav-link:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    .service-row {
+      transition: background .25s ease, padding .25s ease;
+    }
+    .service-row:hover {
+      background: var(--lavender);
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    ::selection { background: var(--purple); color: white; }
+  </style>
+</head>
+
+<body class="grain">
+  <!-- NAV -->
+  <header class="fixed top-0 left-0 right-0 z-40 mix-blend-difference text-white">
+    <nav class="max-w-[1600px] mx-auto px-5 md:px-8 py-5 flex items-center justify-between">
+      <a href="#" class="font-bold tracking-[-.04em] text-lg">NH<span class="opacity-50">/</span>26</a>
+      <div class="hidden md:flex gap-8 text-xs uppercase tracking-[.18em]">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#work">Work</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+      <a href="#contact" class="text-xs uppercase tracking-[.16em] border border-white/60 rounded-full px-4 py-2 hover:bg-white hover:text-black transition">
+        Let's talk →
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section class="min-h-screen relative overflow-hidden flex items-end bg-[#17121f] text-white">
+      <img
+        class="absolute inset-0 editorial-img opacity-60"
+        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=2200&q=85"
+        alt="Temporary editorial portrait placeholder"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#111018] via-[#111018]/15 to-transparent"></div>
+      <div class="absolute right-6 top-28 md:right-10 md:top-36 mono text-[10px] uppercase tracking-[.22em] [writing-mode:vertical-rl] opacity-70">
+        Athens · Greece · 2026
+      </div>
+
+      <div class="relative w-full px-5 md:px-8 pb-10 md:pb-14">
+        <p class="mono text-[10px] uppercase tracking-[.25em] mb-8 text-white/70">Editorial personality / creative portfolio</p>
+        <h1 class="hero-title display font-medium">
+          NOUNA<br>
+          <span class="italic ml-[9vw]">HANNOUNA</span>
+        </h1>
+        <div class="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <p class="max-w-md text-sm md:text-base leading-relaxed text-white/75">
+            Athens-based model, muse and professional over-thinker of outfits.
+            Tall energy. Sharp taste. Questionable amount of confidence.
+          </p>
+          <div class="mono text-[10px] uppercase tracking-[.18em] text-white/60">
+            Scroll to investigate ↓
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="overflow-hidden border-y border-black/10 py-4 bg-[#6d35d8] text-white">
+      <div class="marquee inline-flex gap-10 mono text-[11px] uppercase tracking-[.2em]">
+        <span>CLASSY BUT FUN</span><span>✦</span><span>ATHENS AFTER DARK</span><span>✦</span>
+        <span>EDITORIAL ENERGY</span><span>✦</span><span>NO BORING OUTFITS</span><span>✦</span>
+        <span>CLASSY BUT FUN</span><span>✦</span><span>ATHENS AFTER DARK</span><span>✦</span>
+        <span>EDITORIAL ENERGY</span><span>✦</span><span>NO BORING OUTFITS</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-[1600px] mx-auto px-5 md:px-8 py-28 md:py-40">
+      <div class="grid md:grid-cols-12 gap-10 items-start">
+        <div class="md:col-span-3 mono text-[10px] uppercase tracking-[.2em] fade-up">01 / About</div>
+        <div class="md:col-span-6 fade-up">
+          <h2 class="display text-5xl md:text-7xl leading-[.9]">
+            A little bit<br><em>class.</em><br>A lot of personality.
+          </h2>
+          <p class="mt-10 text-base md:text-lg leading-8 max-w-2xl">
+            Nouna Hannouna is an Athens-based editorial model and creative personality
+            with a taste for dramatic entrances, immaculate tailoring and conversations
+            that last longer than expected.
+          </p>
+          <p class="mt-5 text-base md:text-lg leading-8 max-w-2xl text-black/60">
+            The brief is simple: look expensive, remain entertaining, and never let
+            anyone leave a dinner without a story.
+          </p>
+        </div>
+        <div class="md:col-span-3 md:pt-2 fade-up">
+          <div class="border-t border-black/20 pt-4 text-xs leading-6">
+            <div class="flex justify-between"><span>Based</span><b>Athens</b></div>
+            <div class="flex justify-between"><span>Available</span><b>Worldwide</b></div>
+            <div class="flex justify-between"><span>Specialty</span><b>Editorial</b></div>
+            <div class="flex justify-between"><span>Dress code</span><b>Obviously</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURE IMAGE -->
+    <section class="px-5 md:px-8">
+      <div class="image-card h-[70vh] md:h-[88vh] relative overflow-hidden bg-[#c8b9e8]">
+        <img
+          class="editorial-img"
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2200&q=85"
+          alt="Temporary fashion editorial placeholder"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent"></div>
+        <div class="absolute bottom-6 left-6 right-6 md:bottom-10 md:left-10 flex justify-between items-end text-white">
+          <p class="display italic text-3xl md:text-5xl">"Too dressed up?"</p>
+          <span class="mono text-[9px] uppercase tracking-[.2em]">No such thing.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="max-w-[1600px] mx-auto px-5 md:px-8 py-28 md:py-40">
+      <div class="flex justify-between items-end mb-12 fade-up">
+        <div>
+          <p class="mono text-[10px] uppercase tracking-[.2em] mb-4">02 / Selected images</p>
+          <h2 class="display text-5xl md:text-7xl">The Gallery</h2>
+        </div>
+        <span class="hidden md:block mono text-[10px] uppercase tracking-[.15em]">Temporary images · replace later</span>
+      </div>
+
+      <div class="grid md:grid-cols-12 gap-4">
+        <div class="image-card md:col-span-5 h-[70vh] overflow-hidden bg-[#ddd] fade-up">
+          <img class="editorial-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1300&q=85" alt="Editorial placeholder 1">
+        </div>
+        <div class="md:col-span-7 grid grid-cols-2 gap-4">
+          <div class="image-card h-[45vh] overflow-hidden bg-[#ddd] fade-up">
+            <img class="editorial-img" src="https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&w=1100&q=85" alt="Editorial placeholder 2">
+          </div>
+          <div class="image-card h-[45vh] overflow-hidden bg-[#ddd] fade-up">
+            <img class="editorial-img" src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1100&q=85" alt="Editorial placeholder 3">
+          </div>
+          <div class="image-card col-span-2 h-[48vh] overflow-hidden bg-[#ddd] fade-up">
+            <img class="editorial-img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1800&q=85" alt="Editorial placeholder 4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK / SERVICES -->
+    <section id="work" class="bg-[#16131c] text-white py-28 md:py-40">
+      <div class="max-w-[1600px] mx-auto px-5 md:px-8">
+        <div class="grid md:grid-cols-12 gap-10">
+          <div class="md:col-span-4 fade-up">
+            <p class="mono text-[10px] uppercase tracking-[.2em] mb-5 text-white/50">03 / Work</p>
+            <h2 class="display text-5xl md:text-7xl leading-[.9]">What Nouna<br><em>does.</em></h2>
+          </div>
+
+          <div class="md:col-span-8">
+            <div class="service-row border-t border-white/20 py-7 flex gap-5 justify-between items-center fade-up">
+              <div><span class="mono text-[9px] text-white/40">01</span><h3 class="text-2xl md:text-4xl mt-2">Editorial Shoots</h3></div>
+              <span class="text-2xl">↗</span>
+            </div>
+            <div class="service-row border-t border-white/20 py-7 flex gap-5 justify-between items-center fade-up">
+              <div><span class="mono text-[9px] text-white/40">02</span><h3 class="text-2xl md:text-4xl mt-2">Fashion Campaigns</h3></div>
+              <span class="text-2xl">↗</span>
+            </div>
+            <div class="service-row border-t border-white/20 py-7 flex gap-5 justify-between items-center fade-up">
+              <div><span class="mono text-[9px] text-white/40">03</span><h3 class="text-2xl md:text-4xl mt-2">Creative Collaborations</h3></div>
+              <span class="text-2xl">↗</span>
+            </div>
+            <div class="service-row border-y border-white/20 py-7 flex gap-5 justify-between items-center fade-up">
+              <div><span class="mono text-[9px] text-white/40">04</span><h3 class="text-2xl md:text-4xl mt-2">Events & Appearances</h3></div>
+              <span class="text-2xl">↗</span>
+            </div>
+
+            <p class="mt-8 text-sm leading-7 text-white/50 max-w-xl">
+              Rates are intentionally mysterious until the brief is received.
+              Nouna believes every project deserves its own little plot twist.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVAILABILITY / PRICING -->
+    <section class="max-w-[1600px] mx-auto px-5 md:px-8 py-28 md:py-40">
+      <div class="grid md:grid-cols-2 gap-16">
+        <div class="fade-up">
+          <p class="mono text-[10px] uppercase tracking-[.2em] mb-5">04 / Availability</p>
+          <h2 class="display text-5xl md:text-7xl">Currently<br><em>selective.</em></h2>
+          <div class="mt-10 border-t border-black/20">
+            <div class="py-5 flex justify-between border-b border-black/10">
+              <span>Mon — Thu</span><span class="mono text-xs">CREATIVE BOOKINGS</span>
+            </div>
+            <div class="py-5 flex justify-between border-b border-black/10">
+              <span>Fri — Sun</span><span class="mono text-xs">ATHENS / EVENTS</span>
+            </div>
+            <div class="py-5 flex justify-between border-b border-black/10">
+              <span>International</span><span class="mono text-xs">ASK NICELY</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-up">
+          <p class="mono text-[10px] uppercase tracking-[.2em] mb-5">05 / Pricing</p>
+          <h2 class="display text-5xl md:text-7xl">The<br><em>numbers.</em></h2>
+          <div class="mt-10 bg-[#d9d0f2] p-6 md:p-8">
+            <div class="flex justify-between border-b border-black/15 py-4">
+              <span>Editorial session</span><strong>€€€</strong>
+            </div>
+            <div class="flex justify-between border-b border-black/15 py-4">
+              <span>Campaign day</span><strong>€€€€</strong>
+            </div>
+            <div class="flex justify-between border-b border-black/15 py-4">
+              <span>Event appearance</span><strong>€€</strong>
+            </div>
+            <p class="mt-6 text-sm leading-6">
+              Prices depend on wardrobe, location, concept and the number of people
+              who say “one more take” after the sun has already gone home.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-[#5260ff] text-white py-28 md:py-40">
+      <div class="max-w-[1600px] mx-auto px-5 md:px-8">
+        <div class="grid md:grid-cols-12 gap-10">
+          <div class="md:col-span-7 fade-up">
+            <p class="mono text-[10px] uppercase tracking-[.2em] mb-6">06 / Contact</p>
+            <h2 class="display text-6xl md:text-9xl leading-[.78]">
+              Have a<br><em>good idea?</em>
+            </h2>
+          </div>
+          <div class="md:col-span-5 md:pt-20 fade-up">
+            <p class="text-lg leading-8 max-w-md">
+              Send the concept, the moodboard, the date and your most convincing
+              argument for why Nouna should leave Athens for it.
+            </p>
+            <a href="mailto:hello@nouna.example"
+               class="mt-8 inline-flex items-center gap-3 border-b border-white pb-2 text-sm uppercase tracking-[.14em]">
+              hello@nouna.example <span>↗</span>
+            </a>
+            <div class="mt-14 flex gap-5 mono text-[10px] uppercase tracking-[.18em]">
+              <a href="#" class="hover:opacity-60 transition">Instagram</a>
+              <a href="#" class="hover:opacity-60 transition">TikTok</a>
+              <a href="#" class="hover:opacity-60 transition">X</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#111018] text-white px-5 md:px-8 py-6 flex flex-col md:flex-row gap-3 justify-between mono text-[9px] uppercase tracking-[.16em]">
+    <span>© 2026 Nouna Hannouna</span>
+    <span>Athens · Greece</span>
+    <span>Designed with excessive confidence.</span>
+  </footer>
+
+  <script>
+    // Reveal-on-scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
+
+    // Tiny parallax effect on hero image
+    const heroImg = document.querySelector("section:first-of-type .editorial-img");
+    window.addEventListener("scroll", () => {
+      if (!heroImg) return;
+      const y = Math.min(window.scrollY * 0.12, 90);
+      heroImg.style.transform = `scale(1.04) translateY(${y}px)`;
+    }, { passive: true });
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>
